@@ -25,9 +25,13 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/bootstrap.ts"
+            ], 
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -89,6 +93,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -96,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "1d658e6b-0c56-4c54-aa4e-bdf779b010a6"
   }
 }
