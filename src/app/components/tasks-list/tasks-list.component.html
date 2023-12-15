@@ -1,21 +1,21 @@
 <div class="grid gap-2 d-flex flex-column">
-    <div class="row">
-        <div class="col col-4">
-            <button class="btn btn-primary" (click)="navToAddTasks()">Add Task</button>
+    <div class="row d-flex justify-content-end p-0 m-0">
+        <div class="col button-container">
+            <button class="btn header-color text-light" (click)="navToAddTasks()">Add Task</button>
         </div>
     </div>
     <div class="row">
         @defer () {
-            <table class="table">
+            <table class="table table-bordered table-striped border-rounded">
                 <thead>
                     <tr>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Due Date</th>
-                        <th>Current State</th>
-                        <th>Completed</th>
-                        <th>Notes</th>
-                        <th>Actions</th>
+                        <th  class="text-light header-color">Title</th>
+                        <th  class="text-light header-color">Description</th>
+                        <th  class="text-light header-color">Due Date</th>
+                        <th  class="text-light header-color">Current State</th>
+                        <th  class="text-light header-color">Completed</th>
+                        <th  class="text-light header-color">Notes</th>
+                        <th  class="text-light header-color">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,15 +50,15 @@
             </table>
             <nav>
                 <ul class="pagination justify-content-left">
-                    <li class="page-item" (click)="prevPage()" [ngClass]="{'disabled': currentPage === 1}">
+                    <li class="page-item cursor-pointer" (click)="prevPage()" [ngClass]="{'disabled': currentPage === 1}">
                         <a class="page-link">Prev</a>
                     </li>
                     @for (val of pages; track $index) {
-                        <li [ngClass]="{'active': currentPage === val+1}" class="page-item" (click)="changePage(val+1)">
+                        <li [ngClass]="{'active': currentPage === val+1}" class="page-item cursor-pointer" (click)="changePage(val+1)">
                             <a class="page-link"> {{val+1}} </a>
                         </li>
                     }
-                    <li class="page-item" (click)="nextPage()" [ngClass]="{'disabled': currentPage === pages.length}">
+                    <li class="page-item cursor-pointer" (click)="nextPage()" [ngClass]="{'disabled': currentPage === pages.length}">
                         <a class="page-link">Next</a>
                     </li>
 

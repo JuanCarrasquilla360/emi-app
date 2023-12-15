@@ -14,6 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TasksFormComponent implements OnInit {
   tasks: Array<any> = []
+  title = "Add"
   states: TaskModel["states"] = []
   id!: string
   constructor(private taskService: TaskServiceService, private route: ActivatedRoute) {
@@ -34,6 +35,7 @@ export class TasksFormComponent implements OnInit {
       this.tasks = formatTasks(res.tasks)
       this.states = res.states
       if (!this.id) return
+      this.title="Edit"
       const taskById = res.tasks.find(t => t.id === this.id)
       const setValues = {
         title: taskById?.title || "",

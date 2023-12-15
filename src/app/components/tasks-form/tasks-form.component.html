@@ -1,44 +1,61 @@
-@defer () {
-<form [formGroup]="taskForm" (ngSubmit)="onSubmit($event)">
-    <div class="mb-3">
-        <label>Title</label>
-        <input formControlName="title" type="text" class="form-control">
-    </div>
-    <div class="mb-3">
-        <label>Description</label>
-        <textarea formControlName="description" class="form-control"></textarea>
-    </div>
-    <div class="mb-3">
-        <label>DueDate</label>
-        <input formControlName="dueDate" type="date" class="form-control">
-    </div>
-    <div class="mb-3">
-        <label>Completed</label>
-        <div>
-            <div class="form-check form-check-inline">
-                <input formControlName="completed" class="form-check-input" type="radio" value="true" name="completed">
-                <label>YES</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input formControlName="completed" class="form-check-input" type="radio" value="false" name="completed">
-                <label>NO</label>
-            </div>
-        </div>
-    </div>
-    <div class="mb-3">
-        <label>State History</label>
-        <select class="form-select" formControlName="stateHistory">
-            @for (item of states; track $index) {
-            <option> {{item.name}} </option>
-            }
-        </select>
-    </div>
-    <div class="mb-3">
-        <label>Notes</label>
-        <textarea formControlName="notes" class="form-control"></textarea>
-    </div>
-    <button class="btn btn-primary me-2" type="submit">Save</button>
-    <button class="btn btn-secondary">Cancel</button>
+<div class="form-component">
+    <span class="h1 text-light ">{{title}} your task</span>
+    <div class="form-container">
+        @defer () {
+        <form [formGroup]="taskForm" (ngSubmit)="onSubmit($event)" class="container mt-4">
+            <div class="row mb-3">
+                <div class="mb-3 col col-lg-6 col-sm-12">
+                    <label>Title</label>
+                    <input formControlName="title" type="text" class="form-control">
+                </div>
+                <div class="mb-3 col col-lg-6 col-sm-12">
+                    <label>Description</label>
+                    <input formControlName="description" class="form-control">
+                </div>
 
-</form>
-}
+            </div>
+            <div class="row mb-3">
+                <div class="mb-3 col col-lg-6 col-sm-12">
+                    <label>DueDate</label>
+                    <input formControlName="dueDate" type="date" class="form-control">
+                </div>
+                <div class="mb-3 col col-lg-6 col-sm-12">
+                    <label>Completed</label>
+                    <div>
+                        <div class="form-check form-check-inline">
+                            <input formControlName="completed" class="form-check-input" type="radio" value="true"
+                                name="completed">
+                            <label>YES</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input formControlName="completed" class="form-check-input" type="radio" value="false"
+                                name="completed">
+                            <label>NO</label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row mb-3">
+                <div class="mb-3 col col-lg-6 col-sm-12">
+                    <label>State History</label>
+                    <select class="form-select" formControlName="stateHistory">
+                        @for (item of states; track $index) {
+                        <option> {{item.name}} </option>
+                        }
+                    </select>
+                </div>
+                <div class="mb-3 col col-lg-6 col-sm-12">
+                    <label>Notes</label>
+                    <input formControlName="notes" class="form-control">
+                </div>
+            </div>
+            <button class="btn btn-primary me-2" type="submit">Save</button>
+            <button class="btn btn-outline-primary">Cancel</button>
+
+        </form>
+        }
+
+    </div>
+
+</div>

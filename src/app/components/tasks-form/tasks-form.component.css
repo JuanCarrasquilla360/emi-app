@@ -1,0 +1,27 @@
+.btn-primary {
+    background-color: white;
+    border-color: white;
+    color: #66182A;
+}
+.btn-outline-primary{
+    border-color: white;
+    color: white;
+}
+.form-component{
+    background-color: #66182A;
+    padding: 50px;
+    padding-top: 30px;
+    border-radius: 10px;
+}
+
+label {
+    color: white;
+}
+.form-check-input:checked {
+    background-color: #66182A;
+    border-color: white;
+}
+.btn:hover:last-child {
+    background: #861c34;
+    opacity: 50;
+}
